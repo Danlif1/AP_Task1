@@ -37,4 +37,4 @@ The file uses 7 functions:
 
 **Run**
 
-To run the code I used the command --> clang++ getVector.cpp getVector.h calcDist.h calcDist.cpp ex1.cpp
+To run the code I used the command --> g++ -std=c++11 *.cpp -o program
