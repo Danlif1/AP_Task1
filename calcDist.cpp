@@ -1,4 +1,4 @@
-#include "calcDist.h"
+#include "CalcDist.h"
 
 /**
  * @brief Calculating the distance of two vectors using Euclidian distance.
@@ -34,8 +34,8 @@ double Manhattan(std::vector<int> point1, std::vector<int> point2){
 double Chebyshev(std::vector<int> point1, std::vector<int> point2){
     double result = 0;
     for (int i = 0; i < point1.size(); i++){
-        if (result < abs(point1[i] - point2[i])){
-            result = abs(point1[i] - point2[i]);
+        if (result < (double)abs((double)point1[i] - (double)point2[i])){
+            result = (double)abs((double)point1[i] - (double)point2[i]);
         }
     }
     return result;
@@ -51,7 +51,7 @@ double Chebyshev(std::vector<int> point1, std::vector<int> point2){
 double Canberra(std::vector<int> point1, std::vector<int> point2){
     double result = 0;
     for (int i = 0; i < point1.size(); i++){
-        result += abs(point1[i] - point2[i])/(abs(point1[i])+abs(point2[i]));
+        result += (double)abs((double)point1[i] - (double)point2[i])/(abs((double)point1[i])+abs((double)point2[i]));
     }
     return result;
 }
@@ -67,10 +67,29 @@ double Canberra(std::vector<int> point1, std::vector<int> point2){
 double Minkowski(std::vector<int> point1, std::vector<int> point2, int power){
     double result = 0;
     for (int i = 0; i < point1.size(); i++){
-        result += pow(abs(point1[i] - point2[i]),power);
+
+        result += (double)pow(abs((double)point1[i] - (double)point2[i]),power);
     }
-    result = pow(result, 1/power);
+    result = pow(result, 1.0/power);
     return result;
+}
+
+/**
+ * @brief Formatting the result gotten in the distance function into a double with 16 digits given a non integer.
+ * and a .0 number given an integer.
+ * 
+ * @param num The result gotten from the distance function.
+ * @return char* The result formatted into a double.
+ */
+char* doubleFormat(double num) {
+    int inum = num;
+    char* perc = (char*)"%.16f";
+    if ((double)(num - inum) == 0.0) {
+        perc = (char*)"%.1f";
+    }
+    char* output = (char*)malloc(100);
+    snprintf(output,100,  perc,  num);
+    return output;
 }
 
 /**
@@ -82,10 +101,11 @@ double Minkowski(std::vector<int> point1, std::vector<int> point2, int power){
  * @param power The power used in Minkowski distance.
  */
 void PrintDist(std::vector<int> point1, std::vector<int> point2, int power = 2){
-    std::cout << Euclidian(point1,point2) << std::endl;
-    std::cout << Manhattan(point1,point2) << std::endl;
-    std::cout << Chebyshev(point1,point2) << std::endl;
-    std::cout << Canberra(point1,point2) << std::endl;
-    std::cout << Minkowski(point1,point2,power) << std::endl;
+
+    std::cout << doubleFormat(Euclidian(point1,point2)) << std::endl;
+    std::cout << doubleFormat(Manhattan(point1,point2)) << std::endl;
+    std::cout << doubleFormat(Chebyshev(point1,point2)) << std::endl;
+    std::cout << doubleFormat(Canberra(point1,point2)) << std::endl;
+    std::cout << doubleFormat(Minkowski(point1,point2,power)) << std::endl;
 
 }
