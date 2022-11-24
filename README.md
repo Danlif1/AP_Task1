@@ -36,11 +36,16 @@ The file uses 7 functions:
 1 function prints the results gotten from the 5 distance functions after formatting them.
 
 **Run and compile**
-
-To run the code I used the command
+If the only files you have in your directory are the needed files, mainly ```ex1.cpp```, ```GetVector.cpp``` and ```CalcDist.cpp``` **and their headers (.hpp)**.
+You can compile the code with this command:  
 ```
 g++ -std=c++11 *.cpp -o program
 ```
+Otherwise you need to list them:
+```
+g++ -std=c++11  ex1.cpp GetVecotr.cpp CalcDist.cpp -o program
+```
+
 And run on linux/mac: 
 ```
 ./program
