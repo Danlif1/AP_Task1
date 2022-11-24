@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <math.h>
+#include "calcDist.h"
 double Euclidian(std::vector<int> Point1, std::vector<int> Point2){
     return Minkowski(Point1,Point2,2);
 }
