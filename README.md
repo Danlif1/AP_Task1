@@ -38,3 +38,12 @@ The file uses 7 functions:
 **Run**
 
 To run the code I used the command --> g++ -std=c++11 *.cpp -o program
+
+And run on linux/mac: 
+```
+./program
+```
+and on windows:
+```
+program
+```
