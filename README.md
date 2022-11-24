@@ -35,10 +35,12 @@ The file uses 7 functions:
 
 1 function prints the results gotten from the 5 distance functions after formatting them.
 
-**Run**
+**Run and compile**
 
-To run the code I used the command --> g++ -std=c++11 *.cpp -o program
-
+To run the code I used the command
+```
+g++ -std=c++11 *.cpp -o program
+```
 And run on linux/mac: 
 ```
 ./program
