@@ -34,3 +34,7 @@ The file uses 7 functions:
 1 function formatting the results gotten from the 5 functions into a double with 16/1 numbers after the .
 
 1 function prints the results gotten from the 5 distance functions after formatting them.
+
+**Run**
+
+To run the code I used the command --> clang++ getVector.cpp getVector.h calcDist.h calcDist.cpp ex1.cpp

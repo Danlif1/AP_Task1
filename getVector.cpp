@@ -1,8 +1,5 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
 
+#include "GetVector.h"
 /*
  Taken from: https://java2blog.com/split-string-space-cpp/ and changed to suit the code
  */
